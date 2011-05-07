@@ -31,7 +31,7 @@ describe Post do
     end
     
     it "should have a URL that matches its title" do
-      @post.url.should eql @post.title.parameterize
+      @post.url.should == @post.title.parameterize
     end
     
     it "should have a parsed body" do

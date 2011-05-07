@@ -3,8 +3,8 @@ class PostsController < ApplicationController
   end
   
   def show
-    @post = Post.where(url: params[:url]).first
-    if !@post
+    @post = Post.where(url: params[:id]).first
+    if @post.blank?
       not_found
     end
   end

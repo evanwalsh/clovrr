@@ -7,29 +7,45 @@ describe PostsController do
   end
 
   describe "GET index" do
-    it "should render index.erb" do
+    before :each do
       visit posts_path
+    end
+    
+    it "should render index.erb" do
       response.should render_template(:index)
     end
   end
   
-  describe "GET show with a valid post" do    
-    it "should render show.erb" do
+  describe "GET show with a valid post" do
+    before :each do
       visit post_path(@post.url)
+    end
+    
+    it "should render show.erb" do
       response.should render_template(:show)
     end
   end
   
   describe "GET show with an invalid post" do
-    it "should be unsuccessful" do
+    before :each do
       visit post_path(@post.url.reverse)
-      response.code.should eq 404
+    end
+    
+    it "should give a 404 HTTP response" do
+      page.status_code.should == 404
+    end
+    
+    it "should display 'Page not found'" do
+      page.should have_css('h3', text: 'Page not found')
     end
   end
 
   describe "GET new" do
-    it "should render new.erb" do
+    before :each do
       visit new_post_path
+    end
+    
+    it "should render new.erb" do
       response.should render_template(:new)
     end
   end

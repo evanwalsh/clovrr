@@ -50,7 +50,6 @@ watch( '^spec/spec_helper\.rb'                    ) { run_all_specs }
 watch( '^spec/shared_behaviors/.*\.rb'            ) { |m| run_specs_with_shared_examples(m[0]) }
 watch( '^spec/.*_spec\.rb'                        ) { |m| run_single_spec(m[0]) }
 watch( '^app/(.*)\.rb'                            ) { |m| run_single_spec("spec/%s_spec.rb" % m[1]) }
-watch( '^app/(.*)\.erb'                            ) { |m| run_single_spec("spec/%serb_spec.rb" % m[1]) }
 watch( '^lib/(.*)\.rb'                            ) { |m| run_single_spec("spec/other/%s_spec.rb" % m[1] ) }
 
 
