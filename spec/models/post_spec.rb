@@ -9,6 +9,8 @@ describe Post do
   
   it { should validate_uniqueness_of(:title) }
   
+  it { should respond_to(:reparse_body!) }
+  
   context "before saving" do
     before :all do
       @post = Fabricate.build :post
