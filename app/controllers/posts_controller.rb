@@ -3,6 +3,10 @@ class PostsController < ApplicationController
   end
   
   def show
+    @post = Post.where(url: params[:url]).first
+    if !@post
+      not_found
+    end
   end
 
   def new

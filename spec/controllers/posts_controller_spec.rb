@@ -7,30 +7,30 @@ describe PostsController do
   end
 
   describe "GET index" do
-    it "should be successful" do
+    it "should render index.erb" do
       visit posts_path
-      response.should be_success
+      response.should render_template(:index)
     end
   end
   
   describe "GET show with a valid post" do    
-    it "should be successful" do
+    it "should render show.erb" do
       visit post_path(@post.url)
-      response.should be_success
+      response.should render_template(:show)
     end
   end
   
   describe "GET show with an invalid post" do
     it "should be unsuccessful" do
       visit post_path(@post.url.reverse)
-      response.should be
+      response.code.should eq 404
     end
   end
 
   describe "GET new" do
-    it "should be successful" do
+    it "should render new.erb" do
       visit new_post_path
-      response.should be_success
+      response.should render_template(:new)
     end
   end
 

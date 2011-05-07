@@ -1,5 +1,12 @@
 require 'spec_helper'
 
 describe "posts/show.html.erb" do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before do
+    @post = Fabricate :post
+    render
+  end
+  
+  it "should display the post's title" do
+    page.should have_content(@post.title)
+  end
 end
