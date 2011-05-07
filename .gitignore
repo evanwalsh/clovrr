@@ -1,0 +1,11 @@
+.bundle
+.DS_Store
+.yardoc
+log/*.log
+tmp/
+config/database.yml
+public/uploads/*
+gems/*
+!gems/cache
+!gems/bundler
+coverage
