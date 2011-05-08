@@ -23,12 +23,17 @@ group :development do
 end
 
 group :development, :test do
+  # The goods
   gem 'rspec-rails', '~> 2.5.0'
   gem 'capybara', '~> 0.4.1.2'
+  gem 'capybara-webkit', '~> 0.3.0'
+  gem 'database_cleaner', '~> 0.6.6'
+  
+  # Mongoid stuff
   gem 'mongoid-rspec', '~> 1.4.1'
-  gem 'akephalos', '~> 0.2.5'
+  
+  # Making things easier
   gem 'spork', '~> 0.8.4'
   gem 'watchr', '~> 0.7'
-  gem 'database_cleaner', '~> 0.6.6'
   gem 'fabrication', '~> 0.9.5'
 end
