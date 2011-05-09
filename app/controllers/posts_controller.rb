@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   
   def show
     @post = Post.where(url: params[:id]).first
-    if @post.blank?
+    if @post.nil?
       not_found
     end
   end

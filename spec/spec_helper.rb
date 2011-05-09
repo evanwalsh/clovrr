@@ -27,7 +27,8 @@ Spork.prefork do
     config.mock_with :rspec
     config.include Mongoid::Matchers
 
-    Capybara.javascript_driver = :webkit
+    require 'akephalos'
+    Capybara.javascript_driver = :akephalos
     
     require 'database_cleaner'  
     config.before(:suite) do    

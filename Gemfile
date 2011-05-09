@@ -26,7 +26,7 @@ group :development, :test do
   # The goods
   gem 'rspec-rails', '~> 2.5.0'
   gem 'capybara', '~> 0.4.1.2'
-  gem 'capybara-webkit', '~> 0.3.0'
+  gem 'akephalos', '~> 0.2.5'
   gem 'database_cleaner', '~> 0.6.6'
   
   # Mongoid stuff
