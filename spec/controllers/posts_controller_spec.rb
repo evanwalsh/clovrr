@@ -8,23 +8,23 @@ describe PostsController do
 
   describe "GET index", type: :request do
     before do
-      visit posts_path
+      visit posts_url
     end
   end
   
   describe "GET show with a valid post", type: :request do
     before do
-      visit post_path(@post.url)
+      visit post_url(@post.url)
     end
     
     it "should display the post's title" do
-      page.should have_content(@post.title)
+      page.has_content?(@post.title).should be true
     end
   end
   
   describe "GET show with an invalid post", type: :request do
     before do
-      visit post_path(@post.url.reverse)
+      visit post_url(@post.url.reverse)
     end
     
     it "should give a 404 HTTP response" do
@@ -34,7 +34,7 @@ describe PostsController do
 
   describe "GET new", type: :request do
     before do
-      visit new_post_path
+      visit new_post_url
     end
   end
 

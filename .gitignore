@@ -9,3 +9,4 @@ gems/*
 !gems/cache
 !gems/bundler
 coverage
+capybara*.html

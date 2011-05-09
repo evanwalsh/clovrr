@@ -36,4 +36,5 @@ group :development, :test do
   gem 'spork', '~> 0.8.4'
   gem 'watchr', '~> 0.7'
   gem 'fabrication', '~> 0.9.5'
+  gem 'launchy', '~> 0.4.0'
 end
