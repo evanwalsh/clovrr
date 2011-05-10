@@ -9,6 +9,7 @@ gem 'mongo_ext', '~> 0.19.3'
 
 # Backend
 gem 'redcarpet', '~> 1.13.1'
+gem 'bcrypt-ruby', '~> 2.1.4', require: 'bcrypt'
 
 # Frontend
 gem 'simple_form', '~> 1.3.1'

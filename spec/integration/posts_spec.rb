@@ -36,13 +36,13 @@ describe PostsController do
     end
     
     it "should let me create a post" do
-      within('#new_post') do
+      within('form#new_post') do
         fill_in 'Title', with: 'Do it.'
-        fill_in 'Body', with: 'RIGHT.'
+        fill_in 'Body', with: "Right.\n\nThat's right."
         click_button 'Publish'
       end
-    end
       
+      page.should (have_content('Do it.') and have_content('Right.'))
     end
     
     describe "the form" do
@@ -50,6 +50,7 @@ describe PostsController do
         page.should (have_content('Title') and have_content('Body'))
       end
     end
+    
   end
   
 end

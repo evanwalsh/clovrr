@@ -24,7 +24,7 @@ class Post
     end
     
     def parse_body
-      if self.body_changed?
+      if self.new_record? || self.body_changed?
         parse
       end
     end
