@@ -10,8 +10,8 @@ Spork.prefork do
   Spork.trap_class_method(Rails::Mongoid, :load_models)
   
   # Hey, Devise! Don't cache that class!
-  # require "rails/application"
-  # Spork.trap_method(Rails::Application, :reload_routes!)
+  require "rails/application"
+  Spork.trap_method(Rails::Application, :reload_routes!)
 
   ENV["RAILS_ENV"] ||= 'test'
   require File.expand_path("../../config/environment", __FILE__)

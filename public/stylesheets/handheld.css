@@ -1,0 +1,41 @@
+/* line 1, ../../app/stylesheets/handheld.sass */
+* {
+  float: none;
+}
+
+/* line 4, ../../app/stylesheets/handheld.sass */
+html {
+  width: 320px;
+}
+
+/* line 7, ../../app/stylesheets/handheld.sass */
+body {
+  font-size: 24px;
+}
+
+/* line 10, ../../app/stylesheets/handheld.sass */
+.container {
+  width: 300px;
+  margin: 10px auto;
+}
+
+/* line 14, ../../app/stylesheets/handheld.sass */
+.grid1, .grid2, .grid3, .grid4, .grid5, .grid6, .grid7, .grid8, .grid9, .grid10, .grid11 {
+  float: left;
+  margin-left: 12px;
+}
+
+/* line 19, ../../app/stylesheets/handheld.sass */
+header h1, header h2 {
+  font-size: 36px;
+}
+
+/* line 22, ../../app/stylesheets/handheld.sass */
+h3 {
+  font-size: 28px;
+}
+
+/* line 25, ../../app/stylesheets/handheld.sass */
+.date, .type {
+  font-size: 24px;
+}

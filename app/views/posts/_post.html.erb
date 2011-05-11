@@ -1,2 +1,1 @@
-<h3><%= post.title %></h3>
-<%= raw post.parsed_body %>
+<h3><%= link_to post.title, post_url(post.url) %></h3>
