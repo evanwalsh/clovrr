@@ -1,1 +1,2 @@
 <h3><%= link_to post.title, post_url(post.url) %></h3>
+<h4><%= distance_of_time_in_words(post.created_at, Time.now) %> ago</h4>
