@@ -26,31 +26,4 @@ describe PostsController do
     end
   end
   
-  describe "/posts/new" do
-    before do
-      visit new_post_path
-    end
-    
-    it "should show a form for posting something" do
-      page.should have_css("form#new_post")
-    end
-    
-    it "should let me create a post" do
-      within('form#new_post') do
-        fill_in 'Title', with: 'Do it.'
-        fill_in 'Body', with: "Right.\n\nThat's right."
-        click_button 'Publish'
-      end
-      
-      page.should (have_content('Do it.') and have_content('Right.'))
-    end
-    
-    describe "the form" do
-      it "should have a title and body field" do
-        page.should (have_content('Title') and have_content('Body'))
-      end
-    end
-    
-  end
-  
 end

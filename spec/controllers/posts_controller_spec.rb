@@ -42,33 +42,4 @@ describe PostsController do
     end
   end
 
-  describe "GET /posts/new" do
-    before do
-      visit new_post_url
-    end
-    
-    it { response.should render_template(:new) }
-    
-    it "should give a 200 HTTP response" do
-      page.status_code.should == 200
-    end
-  end
-  
-  describe "POST /posts with a valid post" do
-    before do
-      post 'create', post: { title: 'Post Title', body: 'Well. All right.' }
-    end
-    
-    it { response.should render_template(:index) }
-    
-    it "should give a 200 HTTP response" do
-      page.status_code.should == 200
-    end
-    
-    it "should display the new post" do
-      response.should redirect_to posts_url
-      puts page.source
-    end
-  end
-
 end

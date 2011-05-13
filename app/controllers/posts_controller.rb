@@ -11,21 +11,4 @@ class PostsController < ApplicationController
     end
   end
 
-  def new
-    @post = Post.new
-  end
-  
-  def create
-    @post = Post.new params[:post]
-    if @post.save
-      redirect_to posts_url, notice: 'Post published.'
-    else
-      flash[:error] = 'Post could not be published.'
-      render :new
-    end
-  end
-
-  def edit
-  end
-
 end
