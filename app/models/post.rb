@@ -3,7 +3,7 @@ class Post
   include Mongoid::Timestamps
   include Mongoid::Paranoia
   
-  validates_presence_of :title, :body
+  validates_presence_of :title
   validates_uniqueness_of :title
   
   before_save :generate_url, :parse_body
@@ -12,6 +12,7 @@ class Post
   field :url
   field :body
   field :parsed_body
+  field :link
   
   def reparse_body!
     parse
