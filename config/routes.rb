@@ -1,5 +1,7 @@
 Clovrr::Application.routes.draw do
   
+  mount API => "/"
+  
   resources :posts, :users
   resource :session, only: [ :index, :new, :create, :destroy ]
   

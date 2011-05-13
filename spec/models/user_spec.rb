@@ -11,6 +11,8 @@ describe User do
   it { should validate_uniqueness_of(:username) }
   it { should validate_uniqueness_of(:email) }
   
+  it { should reference_many(:posts) }
+  
   context "before saving" do
     before do
       @user = Fabricate.build :user

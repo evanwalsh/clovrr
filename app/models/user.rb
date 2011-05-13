@@ -14,6 +14,8 @@ class User
   
   validates_uniqueness_of :username, :email
   
+  references_many :posts
+  
   def crypted_password
     @password ||= Password.new(password_digest)
   end

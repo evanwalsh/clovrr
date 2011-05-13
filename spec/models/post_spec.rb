@@ -10,6 +10,8 @@ describe Post do
   it { should validate_uniqueness_of(:title) }
   it { should validate_presence_of(:title) }
   
+  it { should be_referenced_in(:user).as_inverse_of(:posts) }
+  
   it { should respond_to(:reparse_body!) }
   
   context "a text post" do
@@ -94,7 +96,7 @@ describe Post do
         @post.parsed_body.present?.should be true
       end
       
-      it "should not have a link" do
+      it "should have a link" do
         @post.link.present?.should be true
       end
     end
