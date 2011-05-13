@@ -16,7 +16,7 @@ describe SessionsController do
   
   describe "POST /session with a valid session" do
     before do
-      post 'session', session: { username: 'the_courier', password: 'warneverchanges' }
+      post 'create', session: { username: 'the_courier', password: 'warneverchanges' }
     end
     
     it "should give a 200 HTTP response" do
@@ -30,7 +30,7 @@ describe SessionsController do
   
   describe "GET /session/destroy with a session" do
     before do
-      post '', session: { username: 'the_courier', password: 'warneverchanges' }
+      post 'create', session: { username: 'the_courier', password: 'warneverchanges' }
       visit sign_out_url
     end
     

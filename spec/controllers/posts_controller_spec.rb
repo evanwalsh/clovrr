@@ -60,7 +60,6 @@ describe PostsController do
     end
     
     it { response.should render_template(:index) }
-    # it { response.should redirect_to posts_url }
     
     it "should give a 200 HTTP response" do
       page.status_code.should == 200
@@ -68,7 +67,6 @@ describe PostsController do
     
     it "should display the new post" do
       response.should redirect_to posts_url
-      # page.should (have_content('Post Title') and have_content('Well. All right.'))
       puts page.source
     end
   end
