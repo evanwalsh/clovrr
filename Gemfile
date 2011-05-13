@@ -11,6 +11,7 @@ gem 'mongo_ext', '~> 0.19.3'
 gem 'redcarpet', '~> 1.13.1'
 gem 'cancan', '~> 1.6.4'
 gem 'bcrypt-ruby', '~> 2.1.4', require: 'bcrypt'
+gem 'uuid', '~> 2.3.2'
 
 # Frontend
 gem 'simple_form', '~> 1.3.1'

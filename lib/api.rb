@@ -7,8 +7,18 @@ class API < Grape::API
       Post.all
     end
 
-    get ':id' do
+    get '/:id' do
       Post.where(url: params[:id]).first
+    end
+    
+    post '/create' do
+      @post = Post.new params[:post]
+      @post.user = current_user
+      if @post.save
+        @post
+      else
+        nil
+      end
     end
   end
 

@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe PostsController do
+describe UsersController do
   
   before do
     @user = Fabricate :user

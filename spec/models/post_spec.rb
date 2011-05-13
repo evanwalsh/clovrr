@@ -10,7 +10,7 @@ describe Post do
   it { should validate_uniqueness_of(:title) }
   it { should validate_presence_of(:title) }
   
-  it { should be_referenced_in(:user).as_inverse_of(:posts) }
+  it { should belong_to(:user) }
   
   it { should respond_to(:reparse_body!) }
   

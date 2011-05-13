@@ -6,7 +6,7 @@ class Post
   validates_presence_of :title
   validates_uniqueness_of :title
   
-  referenced_in :user, inverse_of: :posts
+  belongs_to :user
   
   before_save :generate_url, :parse_body
   

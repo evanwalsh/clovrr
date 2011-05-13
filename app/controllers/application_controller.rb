@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   
   helper_method :current_user, :signed_in?
   
+  layout 'application'
+  
   private
     def not_found
       render "errors/not_found", status: :not_found

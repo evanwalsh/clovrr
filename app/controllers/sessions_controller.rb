@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
   
+  layout 'sessions'
+  
   def new; end
   
   def create
@@ -16,8 +18,8 @@ class SessionsController < ApplicationController
   end
   
   def destroy
-    if session[:user_id]
-      session[:user_id] = nil
+    if cookies[:user_id]
+      cookies[:user_id] = nil
       flash[:notice] = 'You are signed out. See ya.'
     else
       flash[:error] = 'Sorry, you are not signed in. Try again, yeah?'

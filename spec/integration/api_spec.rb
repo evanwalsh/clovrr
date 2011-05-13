@@ -21,6 +21,17 @@ describe API do
         page.source.should == @post.to_json
       end
     end
+    
+    describe "/create with a valid post" do
+      before do
+        @link_post = Fabricate.build :link_post
+        post '/api/posts/create', post: @link_post
+      end
+      
+      it "should return the post object" do
+        page.source.should have_content(@link_post.title)
+      end
+    end
   end
   
 end

@@ -10,11 +10,13 @@ class User
   field :username
   field :email
   field :password_digest
-  field :admin, type: Boolean, default: false
+  field :api_key
   
   validates_uniqueness_of :username, :email
   
-  references_many :posts
+  has_many :posts
+  
+  before_create :generate_api_key
   
   def crypted_password
     @password ||= Password.new(password_digest)
@@ -26,12 +28,18 @@ class User
   end
   
   def self.authenticate(username, password)
-     user = where(username: username).first
-     if user && user.crypted_password == password
-       user
-     else
-       nil
-     end
-   end
+    user = where(username: username).first
+    if user && user.crypted_password == password
+      user
+    else
+      nil
+    end
+  end
+  
+  private
+    def generate_api_key
+      u = UUID.new
+      self.api_key = Digest::SHA512.hexdigest(u.generate)[0,32]
+    end
   
 end
