@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   respond_to :html, :json
   
   def index
-    @posts = Post.all
+    @posts = Post.desc(:created_at).all
     respond_with @posts
   end
   

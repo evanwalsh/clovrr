@@ -1,2 +1,12 @@
-<h3><%= link_to post.title, post_url(post.url) %></h3>
-<h4><%= distance_of_time_in_words(post.created_at, Time.now) %> ago</h4>
+<div class="post">
+	<% if post.link? %>
+	<h3><%= link_to post.title, post.link %></h3>
+	<h4><%= distance_of_time_in_words(post.created_at, Time.now) %> ago</h4>
+	<%= raw post.parsed_body %>
+	<% else %>
+	<h3><%= link_to post.title, post_url(post.url) %></h3>
+	<h4><%= distance_of_time_in_words(post.created_at, Time.now) %> ago</h4>
+	<%= raw post.parsed_body %>
+	<% end %>
+</div>
+<hr />
