@@ -13,7 +13,7 @@ class API < Grape::API
     
     post '/create' do
       @post = Post.new params[:post]
-      @post.user = current_user
+      @post.user = User.where(api_key: params[:api_key]).first
       if @post.save
         @post
       else

@@ -5,6 +5,7 @@ describe API do
   describe "/api/posts" do    
     before do
       @post = Fabricate :post
+      @user = Fabricate :user
       visit '/api/posts'
     end
     
@@ -25,7 +26,7 @@ describe API do
     describe "/create with a valid post" do
       before do
         @link_post = Fabricate.build :link_post
-        post '/api/posts/create', post: @link_post
+        post '/api/posts/create', { post: @link_post, api_key: @user.api_key }
       end
       
       it "should return the post object" do
