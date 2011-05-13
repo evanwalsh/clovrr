@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
+  respond_to :html, :json
+  
   def index
     @posts = Post.all
+    respond_with @posts
   end
   
   def show
@@ -12,6 +15,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    respond_with @post
   end
   
   def create
@@ -22,6 +26,8 @@ class PostsController < ApplicationController
       flash[:error] = 'Post could not be published.'
       render :new
     end
+    
+    respond_with @post
   end
 
   def edit

@@ -23,12 +23,6 @@ class Session
   end
   
   def save
-    if valid?
-      user = User.authenticate(username, password)
-      session[:user_id] = user.id
-      true
-    else
-      return false
-    end
+    User.authenticate(username, password)
   end
 end

@@ -1,8 +1,15 @@
 <h3>New session</h3>
 
-<%= simple_form_for @session do |f| %>
-	<%= f.input :username %>
-	<%= f.input :password %>
+<%= form_tag '/session', method: :post do %>
+	<div class="input">
+		<label for="session_username">Username</label>
+		<%= text_field_tag 'session[username]' %>
+	</div>
 	
-	<%= f.submit 'Sign in' %>
+	<div class="input">
+		<label for="session_password">Password</label>
+		<%= password_field_tag 'session[password]' %>
+	</div>
+	
+	<%= submit_tag 'Sign in' %>
 <% end %>

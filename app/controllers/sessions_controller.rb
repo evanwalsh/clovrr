@@ -1,15 +1,13 @@
 class SessionsController < ApplicationController
-  def index
-    render :new
-  end
   
-  def new
-    
-  end
+  def new; end
   
   def create
     @session = Session.new params[:session]
-    if @session.save
+    user = @session.save
+    if user
+      cookies.permanent.signed[:user_id] = user.id
+      flash[:notice] = "Welcome back."
       redirect_to root_url
     else
       flash[:error] = 'Could not authenticate you'
@@ -18,6 +16,12 @@ class SessionsController < ApplicationController
   end
   
   def destroy
-    
+    if session[:user_id]
+      session[:user_id] = nil
+      flash[:notice] = 'You are signed out. See ya.'
+    else
+      flash[:error] = 'Sorry, you are not signed in. Try again, yeah?'
+    end
+    redirect_to root_url
   end
 end
