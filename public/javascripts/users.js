@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Sat, 14 May 2011 00:25:11 GMT from
+/* DO NOT MODIFY. This file was compiled Sat, 14 May 2011 00:26:58 GMT from
  * /Users/evan/rails/clovrr/app/scripts/users.coffee
  */
 

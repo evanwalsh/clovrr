@@ -41,5 +41,11 @@ describe PostsController do
       page.status_code.should == 404
     end
   end
+  
+  describe "GET /archive" do
+    before do
+      visit archive_url
+    end
+  end
 
 end

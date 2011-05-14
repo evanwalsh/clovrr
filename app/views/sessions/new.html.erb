@@ -1,4 +1,8 @@
-<h3>New session</h3>
+<% title 'Sign in' %>
+
+<div id="wrong_place">
+	Don't have an account? <%= link_to 'Sign up for one', sign_up_url %>.
+</div>
 
 <%= form_tag '/session', method: :post do %>
 	<div class="input">
