@@ -12,4 +12,10 @@ module ApplicationHelper
     content_for(:title) { page_title }
   end
   
+  def monthname(monthnumber)  
+    if monthnumber  
+      Date::MONTHNAMES[monthnumber.to_i]  
+    end  
+  end
+  
 end

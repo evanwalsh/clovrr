@@ -1,0 +1,10 @@
+<% title 'Archive' %>
+
+<% @posts.sort.reverse.each do |month, posts| %>
+<h3><%= link_to month.strftime("%B %Y"), month_archive_url(month.strftime("%Y"), month.strftime("%m")) %></h3>
+<ul>
+	<% for post in posts %>
+	<li><%=h link_to post.title, post_path(post) %></li>
+	<% end %>
+</ul>
+<% end %>

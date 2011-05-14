@@ -21,7 +21,6 @@ gem 'grape', '~> 0.1.4'
 
 group :development do
   gem 'compass', '~> 0.11.1'
-  gem 'barista', '~> 1.0.0'
   gem 'therubyracer', '~> 0.8.1'
 end
 
@@ -31,6 +30,7 @@ group :development, :test do
   gem 'capybara', '~> 0.4.1.2'
   gem 'akephalos', '~> 0.2.5'
   gem 'database_cleaner', '~> 0.6.6'
+  gem 'barista', '~> 1.0.0'
   
   # Mongoid stuff
   gem 'mongoid-rspec', '~> 1.4.1'

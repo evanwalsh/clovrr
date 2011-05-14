@@ -46,6 +46,24 @@ describe PostsController do
     before do
       visit archive_url
     end
+    
+    it { response.should render_template(:archive) }
+  end
+  
+  describe "GET /archive/:year" do
+    before do
+      visit year_archive_url(2011)
+    end
+    
+    it { response.should render_template(:year_archive) }
+  end
+  
+  describe "GET /archive/:year/:month" do
+    before do
+      visit year_archive_url(2011, 05)
+    end
+    
+    it { response.should render_template(:month_archive) }
   end
 
 end
