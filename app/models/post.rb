@@ -21,6 +21,14 @@ class Post
     save
   end
   
+  def kind
+    if self.link.present?
+      'link'
+    else
+      'text'
+    end
+  end
+  
   private
     def generate_url
       self.url = title.parameterize

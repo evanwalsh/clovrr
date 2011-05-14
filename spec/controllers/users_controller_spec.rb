@@ -55,7 +55,7 @@ describe UsersController do
   
   describe "POST /users with a valid user" do
     before do
-      post 'create', user: (Fabricate.build(:user))
+      post 'create', user: (Fabricate.build(:user).attributes)
     end
     
     it "should give a 200 HTTP response" do

@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   
-  layout 'sessions'
+  layout 'users'
   
   def new; end
   

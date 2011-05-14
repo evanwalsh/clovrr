@@ -13,6 +13,7 @@ describe Post do
   it { should belong_to(:user) }
   
   it { should respond_to(:reparse_body!) }
+  it { should respond_to(:kind) }
   
   context "a text post" do
     context "before saving" do
@@ -34,6 +35,10 @@ describe Post do
       
       it "should not have a link" do
         @post.link.blank?.should be true
+      end
+      
+      it "#kind should return 'text'" do
+        @post.kind.should eq 'text'
       end
     end
 
@@ -57,6 +62,10 @@ describe Post do
       it "should not have a link" do
         @post.link.blank?.should be true
       end
+      
+      it "#kind should return 'text'" do
+        @post.kind.should eq 'text'
+      end
     end
   end
   
@@ -76,6 +85,10 @@ describe Post do
       
       it "should have a title" do
         @post.title.present?.should be true
+      end
+      
+      it "#kind should return 'link'" do
+        @post.kind.should eq 'link'
       end
     end
 
@@ -98,6 +111,10 @@ describe Post do
       
       it "should have a link" do
         @post.link.present?.should be true
+      end
+      
+      it "#kind should return 'link'" do
+        @post.kind.should eq 'link'
       end
     end
   end
