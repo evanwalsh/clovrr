@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   rescue_from Mongoid::Errors::DocumentNotFound, ActionController::RoutingError, ActionView::MissingTemplate, :with => :not_found
   
-  helper_method :current_user, :signed_in?
+  helper_method :current_user, :signed_in?, :admin?
   
   layout 'application'
   
@@ -13,23 +13,36 @@ class ApplicationController < ActionController::Base
     
     def current_user
       if signed_in?
-        User.find cookies[:user_id]
+        User.where(password_digest: cookies[:remember_me]).first
       end
     end
     
     def signed_in?
-      cookies[:user_id].present?
+      cookies[:remember_me].present?
     end
     
-    def guests_only
+    def admin?
+      signed_in? and current_user.admin?
+    end
+    
+    def guests_only!
       if signed_in?
-        redirect_to root_url, notice: "Only people who aren't signed in can go there."
+        flash[:error] = 'Only people who aren\'t signed in can go there.'
+        redirect_to root_url
       end
     end
     
-    def users_only
+    def users_only!
       if !signed_in?
-        redirect_to root_url, notice: "Only people who are signed in can go there. Sorry."
+        flash[:error] = 'Only people who are signed in can go there. Sorry.'
+        redirect_to root_url
+      end
+    end
+    
+    def admins_only!
+      if !admin?
+        flash[:error] = 'Only admins can go there. Sorry.' 
+        redirect_to root_url
       end
     end
 end

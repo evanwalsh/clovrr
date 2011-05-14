@@ -1,2 +1,13 @@
-<h3><%= @post.title %></h3>
-<%= raw @post.parsed_body %>
+<div class="post">
+	<% if @post.link? %>
+	<h3><%= link_to raw("#{@post.title} &rarr;"), @post.link %></h3>
+	<h4><%= distance_of_time_in_words(@post.created_at, Time.now) %> ago</h4>
+	<%= raw @post.parsed_body %>
+	<%= link_to "(permalink)", post_url(@post.url) %>
+	<% else %>
+	<h3><%= @post.title %></h3>
+	<h4><%= distance_of_time_in_words(@post.created_at, Time.now) %> ago</h4>
+	<%= raw @post.parsed_body %>
+	<% end %>
+</div>
+<hr />

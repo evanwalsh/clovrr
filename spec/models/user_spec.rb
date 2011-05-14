@@ -6,6 +6,7 @@ describe User do
   it { should be_paranoid_document }
   
   it { should have_field(:username, :email, :password_digest, :api_key) }
+  it { should have_field(:admin).of_type(Boolean).with_default_value_of(false) }
   
   it { should validate_uniqueness_of(:username) }
   it { should validate_uniqueness_of(:email) }

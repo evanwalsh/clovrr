@@ -11,6 +11,7 @@ class User
   field :email
   field :password_digest
   field :api_key
+  field :admin, type: Boolean, default: false
   
   validates_uniqueness_of :username, :email
   

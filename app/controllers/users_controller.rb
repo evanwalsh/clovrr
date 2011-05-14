@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
-  before_filter :guests_only, only: [ :new, :create ]
-  before_filter :users_only, only: [ :edit, :update, :destroy ]
+  before_filter :guests_only!, only: [ :new, :create ]
+  before_filter :users_only!, only: [ :edit, :update, :destroy ]
   
   layout 'users'
   

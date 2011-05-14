@@ -1,9 +1,15 @@
 Clovrr::Application.routes.draw do
-  
+
   mount API => "/"
   
   resources :posts, :users
   resource :session, only: [ :index, :new, :create, :destroy ]
+  
+  get '/admin', to: 'admin#index'
+  
+  namespace :admin do
+    resources :posts, :users, :preferences
+  end
   
   get '/archive', to: 'posts#archive', as: 'archive'
   get '/archive/:year', to: 'posts#archive', as: 'year_archive'

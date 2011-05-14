@@ -21,6 +21,15 @@ class PostsController < ApplicationController
     end
   end
   
+  def feed
+    @posts = Post.all(:select => "title, author, id, content, posted_at", :order => "posted_at DESC", :limit => 20) 
+
+    respond_to do |format|
+      format.html
+      format.rss { render :layout => false } #index.rss.builder
+    end
+  end
+  
   private
     def year_archive
       @year = params[:year]

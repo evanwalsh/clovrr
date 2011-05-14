@@ -1,12 +1,11 @@
 <div class="post">
 	<% if post.link? %>
-	<h3><%= link_to post.title, post.link %></h3>
-	<h4><%= distance_of_time_in_words(post.created_at, Time.now) %> ago</h4>
-	<%= raw post.parsed_body %>
+	<h3><%= link_to raw("#{post.title} &rarr;"), post.link %></h3>
 	<% else %>
-	<h3><%= link_to post.title, post_url(post.url) %></h3>
+	<h3><%= post.title %></h3>
+	<% end %>
 	<h4><%= distance_of_time_in_words(post.created_at, Time.now) %> ago</h4>
 	<%= raw post.parsed_body %>
-	<% end %>
+	<%= link_to '(permalink)', post_url(post.url) %>
 </div>
 <hr />

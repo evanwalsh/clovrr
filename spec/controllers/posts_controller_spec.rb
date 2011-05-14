@@ -56,14 +56,32 @@ describe PostsController do
     end
     
     it { response.should render_template(:year_archive) }
+    
+    it "should give a 200 HTTP response" do
+      page.status_code.should == 200
+    end
   end
   
   describe "GET /archive/:year/:month" do
     before do
-      visit year_archive_url(2011, 05)
+      visit month_archive_url(2011, 05)
     end
     
     it { response.should render_template(:month_archive) }
+    
+    it "should give a 200 HTTP response" do
+      page.status_code.should == 200
+    end
+  end
+  
+  describe "GET /feed" do
+    before do
+      visit feed_url
+    end
+    
+    it "should give a 200 HTTP response" do
+      page.status_code.should == 200
+    end
   end
 
 end
