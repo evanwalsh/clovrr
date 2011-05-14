@@ -21,12 +21,8 @@ class SessionsController < ApplicationController
   end
   
   def destroy
-    if signed_in?
-      cookies[:user_id] = nil
-      flash[:notice] = 'You are signed out. See ya.'
-    else
-      flash[:error] = 'Sorry, you are not signed in. Try again, yeah?'
-    end
+    cookies[:user_id] = nil
+    flash[:notice] = 'You are signed out. See ya.'
     redirect_to root_url
   end
 end
