@@ -17,6 +17,7 @@ input[type="text"], input[type="password"], input[type="email"] { font-size: 24p
 input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus { outline: 0; border-color: #888888; -moz-box-shadow: 0 0 8px rgba(227, 227, 227, 0.5); -webkit-box-shadow: 0 0 8px rgba(227, 227, 227, 0.5); -o-box-shadow: 0 0 8px rgba(227, 227, 227, 0.5); box-shadow: 0 0 8px rgba(227, 227, 227, 0.5); }
 
 input[type="submit"], button { padding: 12px 32px; background: #81c914 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#81c914), to(#5c8f0e)); border: #639b0f 1px solid; color: white; text-shadow: rgba(0, 0, 0, 0.5) 0 -1px 1px; font-weight: bold; font-size: 16px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -o-border-radius: 4px; -ms-border-radius: 4px; -khtml-border-radius: 4px; border-radius: 4px; }
+input[type="submit"]:hover, button:hover { background: #87d215 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#87d215), to(#62980f)); }
 input[type="submit"]:active, button:active { background: #5c8f0e -webkit-gradient(linear, 0% 0%, 0% 100%, from(#5c8f0e), to(#81c914)); color: #d6f6a6; }
 
 .input { margin-bottom: 16px; }

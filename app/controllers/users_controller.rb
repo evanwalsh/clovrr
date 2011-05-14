@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   
+  before_filter :guests_only, only: [ :new, :create ]
+  before_filter :users_only, only: [ :edit, :update, :destroy ]
+  
   layout 'users'
   
   def index
@@ -28,6 +31,9 @@ class UsersController < ApplicationController
   end
 
   def edit
+  end
+  
+  def destroy    
   end
   
 end
