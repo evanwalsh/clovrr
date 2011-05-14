@@ -9,7 +9,6 @@ I wanted a blogging app, so I made one. Well, I'm making one. This is the in-dev
 - Archive listing of posts
 - A bookmarklet for posting
 - An API for posting and exporting of posts
-- Magic
 
 ## The future?
 
