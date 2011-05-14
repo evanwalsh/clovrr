@@ -14,18 +14,6 @@
 	<%= csrf_meta_tag %>
 </head>
 <body>
-	<% if signed_in? %>
-	<div id="admin">
-		<nav>
-			<ul>
-		    <li><a id="posts" href="#">Posts</a></li>
-				<li><a id="users" href="#">Users</a></li>
-				<li><a id="preferences" href="#">Preferences</a></li>
-			</ul>
-		</nav>
-	</div>
-	<% end %>
-	
 	<div class="container" id="main">
 		
 		<%= flash_messages %>

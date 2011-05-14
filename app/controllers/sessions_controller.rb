@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
   
+  before_filter :guests_only, only: [ :new, :create ]
+  before_filter :users_only, only: [ :destroy ]
+  
   layout 'users'
   
   def new; end
@@ -12,13 +15,13 @@ class SessionsController < ApplicationController
       flash[:notice] = "Welcome back."
       redirect_to root_url
     else
-      flash[:error] = 'Could not authenticate you'
+      flash[:error] = 'Could not authenticate you. Sorry.'
       render :new
     end
   end
   
   def destroy
-    if cookies[:user_id]
+    if signed_in?
       cookies[:user_id] = nil
       flash[:notice] = 'You are signed out. See ya.'
     else

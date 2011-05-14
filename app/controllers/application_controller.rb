@@ -20,4 +20,16 @@ class ApplicationController < ActionController::Base
     def signed_in?
       cookies[:user_id].present?
     end
+    
+    def guests_only
+      if signed_in?
+        redirect_to root_url, notice: "Only people who aren't signed in can go there."
+      end
+    end
+    
+    def users_only
+      if !signed_in?
+        redirect_to root_url, notice: "Only people who are signed in can go there. Sorry."
+      end
+    end
 end
