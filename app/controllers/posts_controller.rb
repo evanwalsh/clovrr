@@ -1,7 +1,13 @@
 class PostsController < ApplicationController
   
   def index
-    @posts = Post.desc(:created_at).all
+    @posts = Post.desc(:created_at).all.limit(20)
+    respond_to do |format|
+      format.atom { 
+        @updated = @posts.first.updated_at unless @posts.empty?
+        render :layout => false
+      }
+    end
   end
   
   def show
@@ -18,15 +24,6 @@ class PostsController < ApplicationController
       year_archive
     else
       @posts = Post.all.group_by { |p| p.created_at.beginning_of_month }
-    end
-  end
-  
-  def feed
-    @posts = Post.all(:select => "title, author, id, content, posted_at", :order => "posted_at DESC", :limit => 20) 
-
-    respond_to do |format|
-      format.html
-      format.rss { render :layout => false } #index.rss.builder
     end
   end
   

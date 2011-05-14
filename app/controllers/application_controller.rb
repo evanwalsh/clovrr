@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  rescue_from Mongoid::Errors::DocumentNotFound, ActionController::RoutingError, ActionView::MissingTemplate, :with => :not_found
+  rescue_from Mongoid::Errors::DocumentNotFound, ActionController::RoutingError, :with => :not_found
   
   helper_method :current_user, :signed_in?, :admin?
   

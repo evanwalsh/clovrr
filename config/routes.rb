@@ -11,6 +11,8 @@ Clovrr::Application.routes.draw do
     resources :posts, :users, :preferences
   end
   
+  get '/feed', to: 'posts#index', format: 'atom'
+  
   get '/archive', to: 'posts#archive', as: 'archive'
   get '/archive/:year', to: 'posts#archive', as: 'year_archive'
   get '/archive/:year/:month', to: 'posts#archive', as: 'month_archive'
