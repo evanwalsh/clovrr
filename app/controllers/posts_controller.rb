@@ -23,19 +23,29 @@ class PostsController < ApplicationController
   
   private
     def year_archive
+      @year = params[:year]
       @posts = Post.where(created_at: { 
-        '$gte' => Time.utc(params[:year]), 
-        '$lte' => Time.utc(params[:year]).end_of_year 
+        '$gte' => Time.utc(@year), 
+        '$lte' => Time.utc(@year).end_of_year 
       })
       render 'year_archive'
     end
     
     def month_archive
+      @year = params[:year]
+      @month = params[:month]
+      @month_name = monthname(@month)
       @posts = Post.where(created_at: { 
-        '$gte' => Time.utc(params[:year], params[:month]).beginning_of_month, 
-        '$lte' => Time.utc(params[:year], params[:month]).end_of_month 
-      })
+        '$gte' => Time.utc(@year, @month).beginning_of_month, 
+        '$lte' => Time.utc(@year, @month).end_of_month 
+      })                          
       render 'month_archive'
+    end
+    
+    def monthname(monthnumber)  
+      if monthnumber  
+        Date::MONTHNAMES[monthnumber.to_i]  
+      end  
     end
 
 end
