@@ -7,6 +7,7 @@ class PostsController < ApplicationController
         @updated = @posts.first.updated_at unless @posts.empty?
         render :layout => false
       }
+      format.html
     end
   end
   

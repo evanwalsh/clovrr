@@ -13,7 +13,11 @@ class SessionsController < ApplicationController
     if user
       cookies.permanent[:remember_me] = user.password_digest
       flash[:notice] = "Welcome back."
-      redirect_to root_url
+      if user.admin?
+        redirect_to admin_url
+      else
+        redirect_to root_url
+      end
     else
       flash[:error] = 'Could not authenticate you. Sorry.'
       render :new

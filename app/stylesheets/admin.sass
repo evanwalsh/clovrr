@@ -1,0 +1,87 @@
+@import base.sass
+@import html5reset.css
+@import 978gs.css
+
+body
+  background: #ededed
+
+a
+  text-decoration: none
+
+#main
+  background: #fff
+  margin: 64px auto
+  padding: 16px
+  border: darken(#ededed, 5) 8px solid
+  +border-radius(8px)
+
+h1, h2
+  display: inline-block
+  font-size: 28px
+    
+h2
+  color: #ccc
+  margin-left: 8px
+  font-weight: 400
+  
+header
+  margin-bottom: 16px
+  
+label
+  display: block
+  color: #444
+  font:
+    weight: bold
+  font:
+    size: 16px
+  
+input[type="text"], input[type="password"], input[type="email"]
+  font-size: 24px
+  padding: 8px
+  width: 580px
+  border: #aaa 1px solid
+  &:focus
+    outline: 0
+    border-color: #888
+    +box-shadow(rgba(227, 227, 227, .5), 0, 0, 8px)
+  
+input[type="submit"], button
+  padding: 12px 32px
+  background: #81C914 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#81C914), to(#5C8F0E))
+  border: darken(#81C914, 10) 1px solid
+  color: #fff
+  text-shadow: rgba(0,0,0,.5) 0 -1px 1px
+  font:
+    weight: bold
+    size: 16px
+  +border-radius(4px)
+  &:hover
+    background: lighten(#81C914, 2) -webkit-gradient(linear, 0% 0%, 0% 100%, from(lighten(#81C914, 2)), to(lighten(#5C8F0E, 2)))
+  &:active
+    background: #5C8F0E -webkit-gradient(linear, 0% 0%, 0% 100%, from(#5C8F0E), to(#81C914))
+    color: lighten(#5C8F0E, 50)
+  
+  
+.input
+  margin-bottom: 16px
+  
+footer
+  margin-top: 16px
+  
+#powered_by
+  float: right
+  
+table
+  width: 100%
+  
+thead
+  font-weight: bold
+  
+tbody
+  border: #ccc 1px solid
+  
+td
+  padding: 4px
+  
+tr
+  border-bottom: #ccc 1px solid

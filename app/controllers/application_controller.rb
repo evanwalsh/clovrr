@@ -42,7 +42,7 @@ class ApplicationController < ActionController::Base
     def admins_only!
       if !admin?
         flash[:error] = 'Only admins can go there. Sorry.' 
-        redirect_to root_url
+        redirect_to sign_in_url
       end
     end
 end

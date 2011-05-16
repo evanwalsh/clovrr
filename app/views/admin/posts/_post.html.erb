@@ -1,0 +1,5 @@
+<tr>
+	<td><%= post.title %></td>
+	<td><%= link_to 'Edit', edit_admin_post_url(post.url) %></td>
+	<td><%= link_to 'Destroy', admin_post_url(post.url), method: :delete %></td>
+</tr>

@@ -4,6 +4,12 @@ class User
   include Mongoid::Paranoia
   include BCrypt
   
+  validates_uniqueness_of :username, :email
+  
+  has_many :posts
+  
+  before_create :generate_api_key
+  
   attr_accessor :password
   attr_accessible :username, :email, :password
   
@@ -12,12 +18,6 @@ class User
   field :password_digest
   field :api_key
   field :admin, type: Boolean, default: false
-  
-  validates_uniqueness_of :username, :email
-  
-  has_many :posts
-  
-  before_create :generate_api_key
   
   def crypted_password
     @password ||= Password.new(password_digest)
