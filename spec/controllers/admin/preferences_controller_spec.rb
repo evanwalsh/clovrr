@@ -1,26 +1,21 @@
 require 'spec_helper'
 
 describe Admin::PreferencesController do
+  
+  before do
+    authenticate!
+  end
 
   describe "GET 'index'" do
     it "should be successful" do
-      get 'index'
-      response.should be_success
+      visit admin_preferences_url
+      puts page.source
     end
   end
-
-  describe "GET 'new'" do
-    it "should be successful" do
-      get 'new'
-      response.should be_success
-    end
-  end
-
-  describe "GET 'edit'" do
-    it "should be successful" do
-      get 'edit'
-      response.should be_success
-    end
+  
+  def authenticate!
+    @user = Fabricate(:user, :admin => true)
+    cookies[:remember_me] = @user.password_digest
   end
 
 end

@@ -3,7 +3,7 @@ module ApplicationHelper
   def flash_messages
     output = String.new
     flash.each do |type,message|
-      output << content_tag(:div, message, :class => "flash \#{type}")
+      output << content_tag(:div, message, :class => "flash #{type}")
     end
     raw output
   end
@@ -15,7 +15,7 @@ module ApplicationHelper
   def monthname(monthnumber)  
     if monthnumber  
       Date::MONTHNAMES[monthnumber.to_i]  
-    end  
+    end
   end
   
 end

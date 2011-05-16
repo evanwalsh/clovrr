@@ -4,11 +4,10 @@ class Preference
   include Mongoid::Paranoia
   
   validates_presence_of :name, :value
-  validates_uniqueness_of :name, :pretty_name
+  validates_uniqueness_of :name
   
   field :name
   field :value
-  field :pretty_name
   
   def self.get(name)
     where(name: name).first.value

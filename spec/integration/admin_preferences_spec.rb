@@ -1,17 +1,16 @@
 require "spec_helper"
 
-describe Admin::PostsController do
+describe Admin::PreferencesController do
   
-  describe "/admin/posts" do    
+  describe "/admin/preferences" do    
     before do
-      @post = Fabricate :post
       authenticate!
+      @post = Fabricate :post
       visit '/admin/posts'
     end
     
     it "should show posts" do
-      # page.should have_content(@post.title)
-      puts page.source
+      page.should have_content(@post.title)
     end
     
   end
