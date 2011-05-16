@@ -1,2 +1,15 @@
-<h1>Admin::Preferences#index</h1>
-<p>Find me in app/views/admin/preferences/index.html.erb</p>
+<% title 'Preferences' %>
+
+<table cellspacing="0" id="preferences">
+	<thead>
+		<tr>
+			<td>Name</td>
+			<td>Value</td>
+			<td>Edit</td>
+			<td>Destroy</td>
+		</tr>
+	</thead>
+	<tbody>
+		<%= render @preferences %>
+	</tbody>
+</table>

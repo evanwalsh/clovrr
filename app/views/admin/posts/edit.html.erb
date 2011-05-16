@@ -1,2 +1,9 @@
-<h1>Admin::Posts#edit</h1>
-<p>Find me in app/views/admin/posts/edit.html.erb</p>
+<% title "Edit post - #{@post.title}" %>
+
+<%= simple_form_for @post, url: admin_posts_url, html_options: { method: :put } do |f| %>
+	<%= f.input :title %>
+	<%= f.input :link, label: 'Link (optional)' %>
+	<%= f.input :body, :as => :text %>
+	
+	<%= f.submit 'Save' %>
+<% end %>

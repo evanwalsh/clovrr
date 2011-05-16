@@ -1,0 +1,6 @@
+<tr>
+	<td><%= preference.name %></td>
+	<td><%= preference.value %></td>
+	<td><%= link_to 'Edit', edit_admin_preference_url(preference.name) %></td>
+	<td><%= link_to 'Destroy', admin_preference_url(preference.name), method: :delete %></td>
+</tr>
