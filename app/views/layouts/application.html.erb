@@ -20,9 +20,9 @@
 		
 		<header>
 			<h1>
-			    <a href="/">Evan Walsh</a>
+			    <a href="/"><%= Preference.get 'site_name' %></a>
 			</h1>
-			<h2>For your health</h2>
+			<h2><%= Preference.get 'site_tagline' %></h2>
 		</header>
 		
 		<div id="content">
@@ -30,7 +30,7 @@
 		</div>
 		
 		<footer>
-			&copy; 2011 Evan Walsh. All Rights Reserved. You should <a href="javascript:alert('Coming soon.')">subscribe via RSS.</a>
+			&copy; 2011 <%= Preference.get 'author_name' %>. All Rights Reserved. You should <a href="javascript:alert('Coming soon.')">subscribe via RSS.</a>
 		</footer>
 		
 	</div>

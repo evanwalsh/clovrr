@@ -12,7 +12,12 @@ class Preference
   before_save :process_name
   
   def self.get(name)
-    where(name: name).first.value
+    preference = where(name: name).first
+    if preference
+      preference.value
+    else
+      "preference '#{name}' is not set"
+    end
   end
   
   private
