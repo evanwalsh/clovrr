@@ -7,7 +7,7 @@ I wanted a blogging app, so I made one. Well, I'm making one. This is the in-dev
 - Markdown-based text posting
 - Link posts (to external sites)
 - Archive listing of posts
-- An API for posting and exporting of posts
+- An API for exporting of posts
 
 ## The future?
 
