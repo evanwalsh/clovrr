@@ -9,7 +9,6 @@ class Admin::PreferencesController < AdminController
   
   def create
     @preference = Preference.new params[:preference]
-    @preference.user = current_user
     if @preference.save
       redirect_to admin_preferences_url, notice: 'Preference published.'
     else

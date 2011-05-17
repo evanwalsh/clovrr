@@ -2,7 +2,8 @@ Clovrr::Application.routes.draw do
 
   mount API => "/"
   
-  resources :posts, :users
+  resources :users
+  resources :posts, only: [ :index, :show ]
   resource :session, only: [ :index, :new, :create, :destroy ]
   
   get '/admin', to: 'admin#index'

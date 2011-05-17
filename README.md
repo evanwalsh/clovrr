@@ -7,11 +7,11 @@ I wanted a blogging app, so I made one. Well, I'm making one. This is the in-dev
 - Markdown-based text posting
 - Link posts (to external sites)
 - Archive listing of posts
-- A bookmarklet for posting
 - An API for posting and exporting of posts
 
 ## The future?
 
+- A bookmarklet for posting
 - Attachments to posts (that upload to S3)
 - Location tagging of posts
 

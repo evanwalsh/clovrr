@@ -9,8 +9,15 @@ class Preference
   field :name
   field :value
   
+  before_save :process_name
+  
   def self.get(name)
     where(name: name).first.value
   end
+  
+  private
+    def process_name
+      self.name = name.parameterize('_')
+    end
   
 end

@@ -1,15 +1,30 @@
 atom_feed :language => 'en-US' do |feed|
-  feed.id nil
+  def get_url(post)
+    if post.link.present?
+      post.link
+    else
+      post_url(post.url)
+    end
+  end
+  
+  def get_content(post)
+    if post.link.present?
+      post.parsed_body+"\n<p>#{link_to('(permalink)', post_url(post.url))}</p>"
+    else
+      post.parsed_body
+    end
+  end
+  
   feed.title 'Evan Walsh'
   feed.updated @updated
 
   @posts.each do |post|
-    next if post.updated_at.blank?
-    feed.entry(post) do |entry|
+    feed.entry(post, url: get_url(post)) do |entry|
       entry.title post.title
-      entry.content post.parsed_body, :type => 'html'
-      entry.updated(post.updated_at.strftime("%Y-%m-%dT%H:%M:%SZ")) 
-      entry.author post.user.username
+      entry.content get_content(post), :type => 'html'
+      entry.author do |author|
+        author.name post.user.username
+      end
     end
   end
 end

@@ -4,7 +4,7 @@ class Admin::PostsController < AdminController
   end
 
   def new
-    @post = Post.new
+    @post = Post.new params[:post]
   end
   
   def create

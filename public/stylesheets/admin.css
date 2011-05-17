@@ -38,3 +38,8 @@ tbody { border: #cccccc 1px solid; }
 td { padding: 4px; }
 
 tr { border-bottom: #cccccc 1px solid; }
+
+.ajax_form input[type="text"] { font-size: 14px; padding: 2px; display: inline; width: 200px; }
+.ajax_form input[type="submit"] { width: auto; padding: 3px 6px; font-size: 12px; }
+.ajax_form .input { display: inline-block; }
+.ajax_form label { font-size: 12px; }

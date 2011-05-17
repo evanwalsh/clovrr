@@ -5,10 +5,9 @@ describe Preference do
   it { should be_timestamped_document }
   it { should be_paranoid_document }
   
-  it { should have_field(:name, :value, :pretty_name) }
+  it { should have_field(:name, :value) }
   
   it { should validate_uniqueness_of(:name) }
-  it { should validate_uniqueness_of(:pretty_name) }
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:value) }
   

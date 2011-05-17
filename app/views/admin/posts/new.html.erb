@@ -1,2 +1,9 @@
-<h1>Admin::Posts#new</h1>
-<p>Find me in app/views/admin/posts/new.html.erb</p>
+<% title "New post" %>
+
+<%= simple_form_for @post, url: admin_posts_url do |f| %>
+	<%= f.input :title %>
+	<%= f.input :link, label: 'Link (optional)' %>
+	<%= f.input :body, :as => :text %>
+	
+	<%= f.submit 'Publish' %>
+<% end %>
