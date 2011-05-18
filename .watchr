@@ -43,10 +43,6 @@ def run_specs_with_shared_examples(shared_example_filename, spec_path = 'spec')
 
 end
 
-def bundle!
-  run "bundle"
-end
-
 # --------------------------------------------------
 # Watchr Rules
 # --------------------------------------------------
@@ -54,7 +50,6 @@ watch( '^spec/spec_helper\.rb'                    ) { run_all_specs }
 watch( '^spec/shared_behaviors/.*\.rb'            ) { |m| run_specs_with_shared_examples(m[0]) }
 watch( '^spec/.*_spec\.rb'                        ) { |m| run_single_spec(m[0]) }
 watch( '^app/(.*)\.rb'                            ) { |m| run_single_spec("spec/%s_spec.rb" % m[1]) }
-watch( 'Gemfile'                                  ) { bundle! }
 # watch( '^lib/(.*)\.rb'                            ) { |m| run_single_spec("spec/other/%s_spec.rb" % m[1] ) }
 
 
