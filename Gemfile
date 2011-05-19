@@ -16,6 +16,7 @@ gem 'themes_for_rails', '~> 0.4.2'
 
 # Frontend
 gem 'simple_form', '~> 1.3.1'
+gem 'kaminari', '~> 0.12.4'
 
 # API
 gem 'grape', '~> 0.1.4'

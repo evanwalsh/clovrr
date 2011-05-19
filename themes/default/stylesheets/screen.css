@@ -25,3 +25,8 @@ footer { margin-bottom: 64px; text-shadow: white 0 1px 0; color: #888888; }
 .body { background: white; text-align: justify; border-top: #cccccc 4px solid; }
 .inside { padding: 16px; }
 .clear { clear: both; }
+
+.pagination { font-size: 36px; font-weight: bold; }
+.pagination .page, .pagination .first, .pagination .last { display: none; }
+.pagination .prev { float: left; }
+.pagination .next { float: right; 

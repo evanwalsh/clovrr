@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   
   def index
-    @posts = Post.desc(:created_at).all.limit(20)
+    @posts = Post.desc(:created_at).page(params[:page])
     respond_to do |format|
       format.atom { 
         @updated = @posts.first.updated_at unless @posts.empty?
@@ -31,22 +31,16 @@ class PostsController < ApplicationController
   private
     def year_archive
       @year = params[:year]
-      @posts = Post.where(created_at: { 
-        '$gte' => Time.utc(@year), 
-        '$lte' => Time.utc(@year).end_of_year 
-      })
-      render 'year_archive'
+      @posts = Post.year(@year)
+      render 'posts/archives/year_archive'
     end
     
     def month_archive
       @year = params[:year]
       @month = params[:month]
       @month_name = monthname(@month)
-      @posts = Post.where(created_at: { 
-        '$gte' => Time.utc(@year, @month).beginning_of_month, 
-        '$lte' => Time.utc(@year, @month).end_of_month 
-      })                          
-      render 'month_archive'
+      @posts = Post.month_of_year(@month, @year)  
+      render 'posts/archives/month_archive'
     end
     
     def monthname(monthnumber)  

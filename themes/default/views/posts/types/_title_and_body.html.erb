@@ -1,0 +1,9 @@
+<div class="fourcol info">
+	<h4><%= link_to post.created_at.strftime('%B %d, %Y. %I:%M%P.'), post_url(post.url) %></h4>
+	<h3><%= post.title %></h3>
+</div>
+<div class="eightcol body last">
+	<div class="inside">
+		<%= raw post.parsed_body %>
+	</div>
+</div>

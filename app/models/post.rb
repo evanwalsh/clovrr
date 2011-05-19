@@ -16,6 +16,17 @@ class Post
   field :parsed_body
   field :link
   
+  scope :year, ->(year) { where(created_at: { 
+      '$gte' => Time.utc(year), 
+      '$lte' => Time.utc(year).end_of_year 
+    })
+  }
+  scope :month_of_year, ->(month, year) { where(created_at: {  
+      '$gte' => Time.utc(year, month).beginning_of_month, 
+      '$lte' => Time.utc(year, month).end_of_month 
+    }) 
+  }
+  
   def reparse_body!
     parse
     save
