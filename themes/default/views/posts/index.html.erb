@@ -1,0 +1,5 @@
+<% title Preference.get 'site_tagline' if Preference.get 'site_tagline' else 'Posts' %>
+
+<ul id="posts">
+	<%= render @posts %>
+</ul>

@@ -4,11 +4,16 @@ class ApplicationController < ActionController::Base
   
   helper_method :current_user, :signed_in?, :admin?
   
-  layout 'application'
+  layout 'blog'
+  theme :get_theme
   
   private
     def not_found
       render "errors/not_found", status: :not_found
+    end
+    
+    def get_theme
+      Preference.get 'theme'
     end
     
     def current_user

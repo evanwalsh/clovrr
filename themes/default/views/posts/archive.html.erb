@@ -1,0 +1,16 @@
+<% title 'Archive' %>
+
+<% @posts.sort.reverse.each do |month, posts| %>
+<div class="fourcol info">
+	<h3><%= link_to month.strftime("%B %Y"), month_archive_url(month.strftime("%Y"), month.strftime("%m")) %></h3>
+</div>
+<div class="eightcol body last">
+	<div class="inside">
+		<ul class="archive">
+			<% for post in posts %>
+			<li><strong><%= post.created_at.strftime('%b %d') %>:</strong> <%= link_to post.title, post_url(post.url) %></li>
+			<% end %>
+		</ul>
+	</div>
+</div>
+<% end %>

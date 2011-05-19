@@ -4,7 +4,7 @@
 <h3><%= link_to month.strftime("%B %Y"), month_archive_url(month.strftime("%Y"), month.strftime("%m")) %></h3>
 <ul>
 	<% for post in posts %>
-	<li><%=h link_to post.title, post_url(post.url) %></li>
+	<li><%= link_to post.title, post_url(post.url) %></li>
 	<% end %>
 </ul>
 <% end %>

@@ -1,89 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Default theme</title>
-	<link href="stylesheets/screen.css" rel="stylesheet" media="screen, print" />
+	<title><%= Preference.get 'site_name' %>: <%= yield :title %></title>
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=320px, initial-scale=1.0, maximum-scale=1.0">
-	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="author" content="">
 	<meta name="description" content="">
+	<%= theme_stylesheet_link_tag 'screen' %>
 </head>
 <body>
 	<div class="container" id="main">
 		<header class="row">
-			<h1><a href="/">Blog Name</a></h1>
-			<h2>Blog Tagline</h2>
+			<h1><a href="/"><%= Preference.get 'site_name' %></a></h1>
+			<h2><%= yield :title %></h2>
 		</header>
 		
 		<div id="content" class="row">
-			<ul id="posts">
-		    <li>
-		    	<div class="fourcol info">
-						<h4>
-						    <a href="#">May 18, 2011. 08:33pm.</a>
-						</h4>
-		    		<h3>What?</h3>
-		    	</div>
-					<div class="eightcol body last">
-						<div class="inside">
-							<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis. Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-							<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis. Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-							<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis. Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-						</div>
-					</div>
-					<div class="clear"></div>
-		    </li>
-		
-				<li>
-					<div class="link">
-						<h4>
-						    <a href="#">May 18, 2011. 08:33pm.</a>
-						</h4>
-						<h3>
-						    <a href="#">Daring Fireball &rarr;</a>
-						</h3>
-					</div>
-				</li>
-				
-				<li>
-					<div class="title_only">
-						<h4>
-						    <a href="#">May 18, 2011. 08:33pm.</a>
-						</h4>
-						<h3>All long-term problems at this point.</h3>
-					</div>
-				</li>
-		
-				<li>
-		    	<div class="fourcol info">
-						<h4>
-						    <a href="#">May 18, 2011. 08:33pm.</a>
-						</h4>
-		    		<h3>
-		    		    <a href="#">Marco.org &rarr;</a>
-		    		</h3>
-		    	</div>
-					<div class="eightcol body last">
-						<div class="inside">
-							<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis. Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-							<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis. Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-							<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis. Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-						</div>
-					</div>
-					<div class="clear"></div>
-		    </li>
-			</ul>
+			<%= yield %>
 		</div>
 		
 		<footer class="row">
 			&copy; 2011 Author. All Rights Reserved.
-		</footer>
-		
+		</footer>		
 	</div>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.js"></script>
-	<script>window.jQuery || document.write("<script src='javascripts/jquery.js'>\x3C/script>")</script>
-	<script src="javascripts/main.js"></script>
 </body>
 </html>

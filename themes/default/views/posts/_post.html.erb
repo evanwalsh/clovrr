@@ -1,0 +1,42 @@
+<li>
+	<% if post.link? and post.body? -%>
+	
+	<div class="fourcol info">
+		<h4><%= link_to post.created_at.strftime('%B %d, %Y. %I:%M%P.'), post_url(post.url) %></h4>
+		<h3><%= link_to raw("#{post.title} &rarr;"), post.link %></h3>
+	</div>
+	<div class="eightcol body last">
+		<div class="inside">
+			<%= raw post.parsed_body %>
+		</div>
+	</div>
+	
+	<% elsif post.link? -%>
+	
+	<div class="link">
+		<h4><%= link_to post.created_at.strftime('%B %d, %Y. %I:%M%P.'), post_url(post.url) %></h4>
+		<h3><%= link_to raw("#{post.title} &rarr;"), post.link %></h3>
+	</div>
+	
+	<% elsif post.body? -%>
+	
+	<div class="fourcol info">
+		<h4><%= link_to post.created_at.strftime('%B %d, %Y. %I:%M%P.'), post_url(post.url) %></h4>
+		<h3><%= post.title %></h3>
+	</div>
+	<div class="eightcol body last">
+		<div class="inside">
+			<%= raw post.parsed_body %>
+		</div>
+	</div>
+	
+	<% else -%>
+	
+	<div class="title_only">
+		<h4><%= link_to post.created_at.strftime('%B %d, %Y. %I:%M%P.'), post_url(post.url) %></h4>
+		<h3><%= post.title %></h3>
+	</div>
+	
+	<% end %>
+	<div class="clear"></div>
+</li>
