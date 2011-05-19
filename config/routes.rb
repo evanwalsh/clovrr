@@ -1,5 +1,7 @@
 Clovrr::Application.routes.draw do
 
+  themes_for_rails
+
   mount API => "/"
   
   resources :users
