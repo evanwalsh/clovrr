@@ -1,12 +1,11 @@
 @import url(reset.css);
 @import url(grid.css);
 
-body { background: #eaeaea url(../images/bg.gif); color: #333333; font-size: 14px; }
-a { text-decoration: none; text-shadow: white 0 1px 0; }
+body { background: #fff; color: #333333; font-size: 14px; }
+a { text-decoration: none; }
 a:link, a:visited { color: #4798ac; }
 a:active { color: #66aec0; }
 a:hover { color: black; }
-h1, h2, h3, h4, h5, h6 { text-shadow: white 0 1px 0; }
 h1 { font-size: 24px; }
 h2 { font-size: 18px; }
 h3 { font-size: 36px; }
@@ -14,7 +13,8 @@ h4 { font-size: 16px; }
 p { margin-bottom: 16px; line-height: 1.8; }
 p + p:last-child, p:only-child { margin-bottom: 0; }
 ul { list-style: none; }
-footer { margin-bottom: 64px; text-shadow: white 0 1px 0; color: #888888; }
+blockquote { margin: 16px 0 16px 16px; border-left: #aaa 2px solid; padding-left: 16px; }
+footer { margin-bottom: 64px; color: #888888; }
 
 #main { margin-top: 64px; margin-bottom: 64px; }
 #content { margin: 64px auto; }
@@ -22,7 +22,7 @@ footer { margin-bottom: 64px; text-shadow: white 0 1px 0; color: #888888; }
 #posts li + li:last-child { margin-bottom: 0; }
 
 .link h3, .title_only h3 { font-size: 64px; }
-.body { background: white; text-align: justify; border-top: #cccccc 4px solid; }
+.body { background: white; text-align: justify-left; }
 .inside { padding: 16px; }
 .clear { clear: both; }
 

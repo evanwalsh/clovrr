@@ -13,7 +13,7 @@
 	<div class="container" id="main">
 		<header class="row">
 			<h1><a href="/"><%= Preference.get 'site_name' %></a></h1>
-			<h2><%= yield :title %></h2>
+			<h2><%= Preference.get 'site_tagline' %></h2>
 		</header>
 		
 		<div id="content" class="row">

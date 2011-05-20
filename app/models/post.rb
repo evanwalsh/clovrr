@@ -42,11 +42,11 @@ class Post
   
   private
     def generate_url
-      self.url = title.parameterize
+      self.url = title[0, 32].parameterize
     end
     
     def parse_body
-      if self.new_record? || self.body_changed?
+      if self.new_record? && body.present? || self.body_changed?
         parse
       end
     end

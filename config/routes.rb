@@ -11,7 +11,7 @@ Clovrr::Application.routes.draw do
   get '/admin', to: 'admin#index'
   
   namespace :admin do
-    resources :posts, :users, :preferences
+    resources :posts, :users, :preferences, except: [ :show ]
   end
   
   get '/feed', to: 'posts#index', format: 'atom'

@@ -1,6 +1,6 @@
 class Admin::PostsController < AdminController
   def index
-    @posts = Post.all
+    @posts = Post.desc(:created_at).page(params[:page])
   end
 
   def new
@@ -28,6 +28,16 @@ class Admin::PostsController < AdminController
       redirect_to admin_posts_url, notice: 'Post saved.'
     else
       flash[:error] = 'Post could not be saved.'
+      render :edit
+    end
+  end
+  
+  def destroy
+    @post = Post.where(url: params[:id]).first
+    if @post.destroy
+      redirect_to admin_posts_url, notice: 'Post destroyed.'
+    else
+      flash[:error] = 'Post could not be destroyed.'
       render :edit
     end
   end
