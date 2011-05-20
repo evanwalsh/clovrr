@@ -1,2 +1,14 @@
-<h1>Admin::Users#edit</h1>
-<p>Find me in app/views/admin/users/edit.html.erb</p>
+<% title "Edit user" %>
+
+<%= simple_form_for @user, url: admin_user_url(@user.username), method: :put do |f| %>
+	<%= f.input :username %>
+	<%= f.input :email %>
+	<%= f.input :password %>
+	<%= f.input :admin, as: :boolean %>
+	
+	<div id="api_key">
+		<strong>API key:</strong> <%= @user.api_key %>
+	</div>
+	
+	<%= f.submit 'Save' %>
+<% end %>

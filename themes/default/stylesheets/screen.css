@@ -3,8 +3,8 @@
 
 body { background: #fff; color: #333333; font-size: 14px; }
 a { text-decoration: none; }
-a:link, a:visited { color: #4798ac; }
-a:active { color: #66aec0; }
+a:link, a:visited { color: #D84848; }
+a:active { color: #B33B3B; }
 a:hover { color: black; }
 h1 { font-size: 24px; }
 h2 { font-size: 18px; }
@@ -13,7 +13,7 @@ h4 { font-size: 16px; }
 p { margin-bottom: 16px; line-height: 1.8; }
 p + p:last-child, p:only-child { margin-bottom: 0; }
 ul { list-style: none; }
-blockquote { margin: 16px 0 16px 16px; border-left: #aaa 2px solid; padding-left: 16px; }
+blockquote { margin: 16px 0; border-left: #aaa 2px solid; padding-left: 16px; }
 footer { margin-bottom: 64px; color: #888888; }
 
 #main { margin-top: 64px; margin-bottom: 64px; }

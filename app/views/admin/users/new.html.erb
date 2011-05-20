@@ -1,2 +1,10 @@
-<h1>Admin::Users#new</h1>
-<p>Find me in app/views/admin/users/new.html.erb</p>
+<% title "New user" %>
+
+<%= simple_form_for @user, url: admin_users_url do |f| %>
+	<%= f.input :username %>
+	<%= f.input :email %>
+	<%= f.input :password %>
+	<%= f.input :admin, as: :boolean %>
+	
+	<%= f.submit 'Save' %>
+<% end %>

@@ -45,8 +45,9 @@ input[type="text"], input[type="password"], input[type="email"], textarea
     border-color: #888
     +box-shadow(rgba(227, 227, 227, .5), 0, 0, 8px)
   
-input[type="submit"], button
+input[type="submit"]
   padding: 12px 32px
+  background: #81C914
   background: #81C914 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#81C914), to(#5C8F0E))
   border: darken(#81C914, 10) 1px solid
   color: #fff
@@ -56,10 +57,17 @@ input[type="submit"], button
     size: 16px
   +border-radius(4px)
   &:hover
+    background: lighten(#81C914, 2)
     background: lighten(#81C914, 2) -webkit-gradient(linear, 0% 0%, 0% 100%, from(lighten(#81C914, 2)), to(lighten(#5C8F0E, 2)))
   &:active
+    background: #5C8F0E
     background: #5C8F0E -webkit-gradient(linear, 0% 0%, 0% 100%, from(#5C8F0E), to(#81C914))
     color: lighten(#5C8F0E, 50)
+
+.add
+  margin-bottom: 16px
+  display: inline-block
+  font-size: 24px
   
 textarea
   font-size: 14px
@@ -67,6 +75,10 @@ textarea
   
 .input
   margin-bottom: 16px
+  
+form
+  abbr
+    display: none
   
 footer
   margin-top: 16px
@@ -103,3 +115,12 @@ tr
     display: inline-block
   label
     font-size: 12px
+    
+#api_key
+  margin-bottom: 16px
+  padding: 16px
+  background: #eee
+  
+nav
+  font-size: 24px
+  font-weight: bold

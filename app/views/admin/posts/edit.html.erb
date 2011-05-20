@@ -1,6 +1,6 @@
-<% title "Edit post - #{@post.title}" %>
+<% title "Edit post" %>
 
-<%= simple_form_for @post, url: admin_post_url(@post.url), html_options: { method: :put } do |f| %>
+<%= simple_form_for @post, url: admin_post_url(@post.url), method: :put do |f| %>
 	<%= f.input :title %>
 	<%= f.input :link, label: 'Link (optional)' %>
 	<%= f.input :body, :as => :text %>

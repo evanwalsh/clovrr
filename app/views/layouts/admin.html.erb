@@ -16,11 +16,18 @@
 		<%= flash_messages %>
 		
 		<header>
-			<h1><%= yield :title %></h1>
+			<h1>Clovrr</h1>
+			<h2><%= yield :title %></h2>
 		</header>
 		
 		<div class="grid3 first" id="side">
-			Side
+			<nav>
+		    <ul>
+	        <li><%= link_to 'Posts', admin_posts_url %></li>
+	        <li><%= link_to 'Users', admin_users_url %></li>
+	        <li><%= link_to 'Preferences', admin_preferences_url %></li>
+		    </ul>
+			</nav>
 		</div>
 		
 		<div id="content" class="grid9">			

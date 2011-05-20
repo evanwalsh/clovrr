@@ -1,2 +1,8 @@
-<h1>Admin::Preferences#edit</h1>
-<p>Find me in app/views/admin/preferences/edit.html.erb</p>
+<% title "Edit preference" %>
+
+<%= simple_form_for @preference, url: admin_preference_url(@preference.name), method: :put do |f| %>
+	<%= f.input :name %>
+	<%= f.input :value %>
+	
+	<%= f.submit 'Save' %>
+<% end %>
