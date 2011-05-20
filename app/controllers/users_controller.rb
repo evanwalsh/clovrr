@@ -23,17 +23,35 @@ class UsersController < ApplicationController
   def create
     @user = User.new params[:user]
     if @user.save
-      redirect_to users_url, notice: 'User created.'
+      redirect_to users_url, notice: 'Your account has been created.'
     else
-      flash[:error] = 'User could not be created.'
+      flash[:error] = 'Your account could not be created.'
       render :new
     end
   end
 
   def edit
+    @user = current_user
   end
   
-  def destroy    
+  def update
+    @user = current_user
+    if @user.update_attributes params[:user]
+      redirect_to root_url, notice: 'Your account has been updated.'
+    else
+      flash[:error] = 'Your account could not be updated.'
+      render :edit
+    end
+  end
+  
+  def destroy
+    @user = current_user
+    if @user.destroy
+      redirect_to root_url, notice: 'Your account has been destroyed. Goodbye.'
+    else
+      flash[:error] = 'Your account could not be destroyed. Sorry.'
+      render :edit
+    end
   end
   
 end
