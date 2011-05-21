@@ -21,7 +21,7 @@ class Preference
   
   private
     def process_name
-      self.name = name.parameterize('_')
+      self.name = name.to_s.parameterize('_')
     end
   
 end
