@@ -1,5 +1,6 @@
 namespace :app do
   task :install do
+    Rake::Task['db:drop'].invoke
     Rake::Task['db:seed'].invoke
     puts "Clovrr is now installed."
     puts "\nVisit your_site/admin to get started."
