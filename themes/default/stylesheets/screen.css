@@ -30,3 +30,7 @@ footer { margin-bottom: 64px; color: #888888; }
 .pagination .page, .pagination .first, .pagination .last { display: none; }
 .pagination .prev { float: left; }
 .pagination .next { float: right; 
+
+.flash { padding: 16px; font-weight: bold; color: white; margin-bottom: 16px; text-shadow: rgba(0, 0, 0, 0.5) 0 1px 0; }
+.notice { background: #4eb933; }
+.error { background: #b33b3b; }
