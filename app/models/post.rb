@@ -1,7 +1,6 @@
 class Post
   include Mongoid::Document
   include Mongoid::Timestamps
-  include Mongoid::Paranoia
   
   validates_presence_of :title
   validates_uniqueness_of :title

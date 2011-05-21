@@ -1,9 +1,10 @@
 class User
   include Mongoid::Document
   include Mongoid::Timestamps
-  include Mongoid::Paranoia
   include BCrypt
   
+  validates_presence_of :username, :email
+  # validates_presence_of :password, on: :create
   validates_uniqueness_of :username, :email
   
   has_many :posts

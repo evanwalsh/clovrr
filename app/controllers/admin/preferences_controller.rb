@@ -10,7 +10,7 @@ class Admin::PreferencesController < AdminController
   def create
     @preference = Preference.new params[:preference]
     if @preference.save
-      redirect_to admin_preferences_url, notice: 'Preference published.'
+      redirect_to admin_preferences_url, notice: 'Preference created.'
     else
       flash[:error] = 'Preference could not be created.'
       render :new

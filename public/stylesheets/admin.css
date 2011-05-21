@@ -27,6 +27,9 @@ textarea { font-size: 14px; height: 280px; }
 
 .input { margin-bottom: 16px; }
 
+.boolean input { margin-top: -2px; display: inline-block; }
+.boolean label { display: inline-block; margin-left: 8px; }
+
 form abbr { display: none; }
 
 footer { margin-top: 16px; }
@@ -50,4 +53,10 @@ tr { border-bottom: #cccccc 1px solid; }
 
 #api_key { margin-bottom: 16px; padding: 16px; background: #eeeeee; }
 
-nav { font-size: 24px; font-weight: bold; }
+nav { font-size: 24px; }
+
+.flash { padding: 16px; font-weight: bold; color: white; margin-bottom: 16px; text-shadow: rgba(0, 0, 0, 0.5) 0 1px 0; }
+
+.notice { background: #4eb933; }
+
+.error { background: #b33b3b; }

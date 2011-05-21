@@ -23,6 +23,9 @@ class Admin::UsersController < AdminController
   
   def update
     @user = User.where(username: params[:id]).first
+    
+    params[:user].delete('password') if params[:user]['password'].empty?      
+    
     if @user.update_attributes params[:user]
       redirect_to admin_users_url, notice: 'User saved.'
     else

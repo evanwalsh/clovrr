@@ -3,7 +3,6 @@ require 'spec_helper'
 describe Post do
   it { should be_mongoid_document }
   it { should be_timestamped_document }
-  it { should be_paranoid_document }
   
   it { should have_field(:title, :url, :body, :parsed_body, :link) }
   
@@ -52,7 +51,7 @@ describe Post do
       end
 
       it "should have a URL that matches its title" do
-        @post.url.should == @post.title.parameterize
+        @post.url.should == @post.title[0, 32].parameterize
       end
 
       it "should have a parsed body" do

@@ -5,3 +5,16 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+preferences = {
+  site_name: 'My blog.'
+  site_tagline:	'This is it.'
+  author_name: 'Clovrr User'
+  theme: 'default'
+}
+
+preferences.each do |name, value|
+  Preference.create({ name: name, value: value })
+end
+
+User.create({ username: 'admin', email: 'change_me@example.com', password: 'admin' })

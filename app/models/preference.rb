@@ -1,7 +1,6 @@
 class Preference
   include Mongoid::Document
   include Mongoid::Timestamps
-  include Mongoid::Paranoia
   
   validates_presence_of :name, :value
   validates_uniqueness_of :name

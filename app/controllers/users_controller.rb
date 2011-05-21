@@ -36,6 +36,7 @@ class UsersController < ApplicationController
   
   def update
     @user = current_user
+    params[:user].delete('password') if params[:user]['password'].empty?
     if @user.update_attributes params[:user]
       redirect_to root_url, notice: 'Your account has been updated.'
     else
