@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     @user = current_user
     params[:user].delete('password') if params[:user]['password'].empty?
     if @user.update_attributes params[:user]
-      redirect_to user_url(@user.username), notice: 'Your account has been updated.'
+      redirect_to root_url, notice: 'Your account has been updated. If you changed your password, you need to log in again with your new password.'
     else
       flash[:error] = 'Your account could not be updated.'
       render :edit
