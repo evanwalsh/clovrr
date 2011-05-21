@@ -9,4 +9,8 @@ namespace :app do
     puts "\nMake sure you change that."
     puts "Thanks for trying Clovrr out."
   end
+  
+  take :version do
+    puts "1.0.beta1"
+  end
 end
