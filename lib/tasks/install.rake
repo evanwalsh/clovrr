@@ -10,7 +10,7 @@ namespace :app do
     puts "Thanks for trying Clovrr out."
   end
   
-  take :version do
+  task :version do
     puts "1.0.beta1"
   end
 end
