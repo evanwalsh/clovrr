@@ -1,7 +1,7 @@
 @import url(reset.css);
 @import url(grid.css);
 
-body { background: #fff; color: #333333; font-size: 14px; }
+body { background: #fff; color: #333333; font-size: 14px; -webkit-font-smoothing: antialiased; }
 a { text-decoration: none; }
 a:link, a:visited { color: #D84848; }
 a:active { color: #B33B3B; }
@@ -34,3 +34,8 @@ footer { margin-bottom: 64px; color: #888888; }
 .flash { padding: 16px; font-weight: bold; color: white; margin-bottom: 16px; text-shadow: rgba(0, 0, 0, 0.5) 0 1px 0; }
 .notice { background: #4eb933; }
 .error { background: #b33b3b; }
+
+#account_bar { background: #eee; padding: 8px 16px; border-bottom: #ddd 1px solid; }
+#account_bar strong { float: left; }
+#actions { float: right; list-style: none; }
+#actions li { display: inline-block; margin-left: 16px; }

@@ -5,12 +5,8 @@ class UsersController < ApplicationController
   
   layout 'users'
   
-  def index
-    @users = User.all
-  end
-  
   def show
-    @user = User.where(username: params[:id]).first
+    @user = current_user
     if @user.nil?
       not_found
     end
@@ -32,10 +28,6 @@ class UsersController < ApplicationController
 
   def edit
     @user = current_user
-    if params[:id] != current_user.username
-      flash[:error] = "Hey, that's not your account. You can't edit it."
-      redirect_to root_url
-    end
   end
   
   def update

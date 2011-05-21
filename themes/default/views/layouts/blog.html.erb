@@ -10,6 +10,25 @@
 	<%= theme_stylesheet_link_tag 'screen' %>
 </head>
 <body>
+	<div id="account_bar">
+	<% if signed_in? -%>
+		<strong>Hello, <%= current_user.username %>.</strong>
+		<ul id="actions">
+			<% if admin? -%>
+			<li><%= link_to 'Admin', admin_url %></li>
+			<% end -%>
+			<li><%= link_to 'Your account', account_url %></li>
+			<li><%= link_to 'Sign out', sign_out_url %></li>
+		</ul>
+	<% else -%>
+		<strong>Hello, guest user.</strong>
+		<ul id="actions">
+			<li><%= link_to 'Sign in', sign_in_url %></li>
+			<li><%= link_to 'Sign up', sign_up_url %></li>
+		</ul>
+	<% end -%>
+		<div class="clear"></div>	
+	</div>
 	<div class="container" id="main">
 		<%= flash_messages %>		
 		<header class="row">
@@ -22,7 +41,7 @@
 		</div>
 		
 		<footer class="row">
-			&copy; 2011 <%= Preference.get 'author_name' %>. This is a <a href="http://clovrr.com">Clovrr</a> blog.
+			&copy; 2011 <%= Preference.get 'author_name' %>. <%= link_to 'View the posts archive', archive_url %>. This is a <a href="http://clovrr.com">Clovrr</a> blog.
 		</footer>		
 	</div>
 </body>

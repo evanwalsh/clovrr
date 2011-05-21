@@ -4,15 +4,17 @@ Clovrr::Application.routes.draw do
 
   mount API => "/"
   
-  resources :users
+  resource :user
   resources :posts, only: [ :index, :show ]
   resource :session, only: [ :index, :new, :create, :destroy ]
   
   get '/admin', to: 'admin#index'
-  
   namespace :admin do
     resources :posts, :users, :preferences, except: [ :show ]
   end
+  
+  get '/account', to: 'users#show'
+  get '/account/edit', to: 'users#edit', as: 'edit_account'
   
   get '/feed', to: 'posts#index', format: 'atom'
   

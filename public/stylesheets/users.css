@@ -9,6 +9,10 @@ h1, h2 { display: inline-block; font-size: 28px; }
 
 h2 { color: #cccccc; margin-left: 8px; font-weight: 400; }
 
+h3 { font-size: 20px; }
+
+h4 { font-size: 18px; color: #aaaaaa; font-weight: normal; }
+
 header { margin-bottom: 16px; }
 
 label { display: block; color: #444444; font-weight: bold; font-size: 16px; }
@@ -28,8 +32,18 @@ footer { margin-top: 16px; }
 
 #wrong_place { background: #eeeeee; padding: 8px; font-size: 15px; margin-bottom: 16px; }
 
+#actions { font-size: 18px; list-style: none; margin: 16px 0; padding: 16px; background: #eeeeee; }
+
+#edit { float: left; }
+
+#destroy { float: right; }
+#destroy a { color: #bbbbbb; }
+#destroy a:hover { color: #b33b3b; }
+
 .flash { padding: 16px; font-weight: bold; color: white; margin-bottom: 16px; text-shadow: rgba(0, 0, 0, 0.5) 0 1px 0; }
 
 .notice { background: #4eb933; }
 
 .error { background: #b33b3b; }
+
+.clear { clear: both; }

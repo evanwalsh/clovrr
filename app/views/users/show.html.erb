@@ -1,2 +1,10 @@
-<h3><%= @user.username %></h3>
-<h4>User since <%= @user.created_at %></h4>
+<% title 'Your account' %>
+
+<h3><%= @user.username %> (<%= @user.email %>)</h3>
+<h4>User since <%= @user.created_at.strftime('%b %d, %Y @ %I:%M%P') %></h4>
+
+<ul id="actions">
+	<li id="edit"><%= link_to 'Edit your account', edit_account_url %></li>
+	<li id="destroy"><%= link_to 'Delete your account', account_url, method: :delete, confirm: 'Are you sure?' %></li>
+	<div class="clear"></div>
+</ul>
