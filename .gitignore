@@ -1,0 +1,6 @@
+app
+log
+tmp
+themes
+.sass-cache
+.DS_Store
