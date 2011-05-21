@@ -17,13 +17,13 @@ class ApplicationController < ActionController::Base
     end
     
     def current_user
-      if signed_in?
+      if cookies[:remember_me].present?
         User.where(password_digest: cookies[:remember_me]).first
       end
     end
     
     def signed_in?
-      cookies[:remember_me].present?
+      current_user.present?
     end
     
     def admin?

@@ -18,3 +18,8 @@ preferences.each do |name, value|
 end
 
 User.create({ username: 'admin', email: 'change_me@example.com', password: 'admin' })
+
+Post.create({ 
+  title: 'My first post.', 
+  body: "This is my very first post on my new Clovrr blog.\n\nI should probably log in to the admin section and delete this." 
+})

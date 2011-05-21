@@ -27,3 +27,9 @@ footer { margin-top: 16px; }
 #powered_by { float: right; }
 
 #wrong_place { background: #eeeeee; padding: 8px; font-size: 15px; margin-bottom: 16px; }
+
+.flash { padding: 16px; font-weight: bold; color: white; margin-bottom: 16px; text-shadow: rgba(0, 0, 0, 0.5) 0 1px 0; }
+
+.notice { background: #4eb933; }
+
+.error { background: #b33b3b; }

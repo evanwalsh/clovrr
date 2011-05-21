@@ -16,7 +16,7 @@
 		<%= flash_messages %>
 		
 		<header>
-			<h1>Clovrr</h1>
+			<h1><%= Preference.get 'site_name' %></h1>
 			<h2><%= yield :title %></h2>
 		</header>
 		
