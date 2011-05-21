@@ -17,7 +17,10 @@ preferences.each do |name, value|
   Preference.create({ name: name, value: value })
 end
 
-User.create({ username: 'admin', email: 'change_me@example.com', password: 'admin', admin: true })
+User.create({ username: 'admin', email: 'change_me@example.com', password: 'admin' })
+u = User.first
+u.admin = true
+u.save
 
 Post.create({ 
   title: 'My first post.', 
