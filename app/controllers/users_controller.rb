@@ -32,13 +32,17 @@ class UsersController < ApplicationController
 
   def edit
     @user = current_user
+    if params[:id] != current_user.username
+      flash[:error] = "Hey, that's not your account. You can't edit it."
+      redirect_to root_url
+    end
   end
   
   def update
     @user = current_user
     params[:user].delete('password') if params[:user]['password'].empty?
     if @user.update_attributes params[:user]
-      redirect_to root_url, notice: 'Your account has been updated.'
+      redirect_to user_url(@user.username), notice: 'Your account has been updated.'
     else
       flash[:error] = 'Your account could not be updated.'
       render :edit
