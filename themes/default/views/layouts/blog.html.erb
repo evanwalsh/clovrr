@@ -11,6 +11,7 @@
 </head>
 <body>
 	<div class="container" id="main">
+		<%= flash_messages %>		
 		<header class="row">
 			<h1><a href="/"><%= Preference.get 'site_name' %></a></h1>
 			<h2><%= Preference.get 'site_tagline' %></h2>
