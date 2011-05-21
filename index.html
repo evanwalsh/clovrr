@@ -14,8 +14,79 @@
 	<div class="container" id="main">
 		<header class="row">
 			<h1>Clovrr</h1>
-			<h2>A blogging app.</h2>
+			<h2>A blogging app</h2>
 		</header>
+		
+		<div class="row" id="content">
+			
+			<div class="row" id="about">
+				<div class="fivecol intro">
+					<h3>Explaining.</h3>
+				</div>
+
+				<div class="sevencol last details">
+					<p>Blogs I've had in the past were great, but not quite what I wanted.</p>
+					<p>I wanted to be able to easily get all my posts out (if needed). I wanted to have Markdown support. I wanted a powerful templating system.</p>
+					<p>Nothing out there fulfilled these requirements, so I set out to make my own.</p>
+					<p>Here's version 1. It's rough, but it's here. I spent about 2 weeks working on it.</p>
+				</div>
+			</div>
+
+			<div class="row" id="get">
+				<div class="fivecol intro">
+					<h3>Downloading.</h3>
+				</div>
+
+				<div class="sevencol last details">
+					<div id="links">
+						<a href="https://github.com/evanwalsh/clovrr/zipball/v1.0" id="download">Download v1.0 (.zip)</a> or
+						<a href="https://github.com/evanwalsh/clovrr/zipball">Download the in-development version</a>.
+					</div>
+				</div>
+			</div>
+			
+			<div class="row" id="requirements">
+				<div class="fivecol intro">
+					<h3>Requirements.</h3>
+				</div>
+				
+				<div class="sevencol last details">
+					<ul> 
+						<li>Ruby MRI 1.9.2 or its equivalent</li> 
+						<li>A server that can serve Rails apps</li> 
+						<li>MongoDB</li> 
+						<li>A brain</li> 
+					</ul>
+				</div>
+			</div>
+
+			<div class="row" id="install">
+				<div class="fivecol intro">
+					<h3>Installing.</h3>
+				</div>
+
+				<div class="sevencol last details">
+					<p>Clovrr was sort of designed to work on Heroku, but it could be installed most anywhere Rails 3 apps work otherwise.</p> 
+					<p>Anyway, here's the <em>Heroku Way</em>.</p> 
+					<ol> 
+						<li>Download Clovrr via the links above or clone the git repo<br>(<code>git clone git://github.com/evanwalsh/clovrr.git</code>)</li> 
+						<li>Install the Heroku gem (<code>gem install heroku</code>)</li> 
+						<li>Make a new app on Heroku: <code>heroku create YOUR_APP_NAME --stack bamboo-mri-1.9.2</code></li> 
+						<li>Modify config/mongoid.yml if necessary (Clovrr will automatically work with Heroku and MongoHQ)</li> 
+						<li><em>(OPTIONAL)</em> Modify db/seeds.rb</li> 
+						<li><code>git push heroku master</code></li> 
+						<li><code>heroku rake app:install</code></li> 
+					</ol>
+					<p><strong>HEY BRO, YOU'RE DONE. WORD UP.</strong></p>
+				</div>
+			</div>
+
+		</div>
+		
+		<footer class="row">
+			2011. A project by <a href="http://evanwalsh.net">Evan Walsh</a>. MIT licensed.
+		</footer>
+		
 	</div>
 </body>
 </html>

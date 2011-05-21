@@ -1,7 +1,34 @@
 @import url(reset.css);
 @import url(grid.css);
-#main { margin: 64px auto; }
+body { background: white; color: #333333; font-size: 14px; -webkit-font-smoothing: antialiased; }
+
+a { text-decoration: none; }
+a:link, a:visited { color: #d84848; }
+a:active { color: #b33b3b; }
+a:hover { color: black; }
 
 h1 { font-size: 48px; }
 
 h2 { font-size: 36px; color: #aaaaaa; font-weight: normal; }
+
+h3 { font-size: 24px; }
+
+p { margin-bottom: 16px; line-height: 1.8; }
+
+p + p:last-child, p:only-child { margin-bottom: 0; }
+
+code { background: #eeeeee; font-weight: bold; font-family: "Menlo", "Andale Mono", "Monaco", monospace; }
+
+ul, ol { margin: 16px 0; }
+ul li, ol li { margin: 4px 0; }
+
+em { font-style: oblique; }
+
+#main { margin: 64px auto; }
+
+#content { margin-top: 64px; margin-bottom: 64px; }
+#content .row { margin-bottom: 64px; border-top: #eeeeee 1px solid; padding-top: 8px; }
+
+#links { font-size: 18px; padding: 8px; background: #eeeeee; display: inline-block; font-weight: bold; }
+
+.clear { clear: both; }

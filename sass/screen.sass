@@ -1,8 +1,20 @@
 @import reset.css
 @import grid.css
 
-#main
-  margin: 64px auto
+body
+  background: #fff
+  color: #333333
+  font-size: 14px
+  -webkit-font-smoothing: antialiased
+
+a
+  text-decoration: none
+  &:link, &:visited
+    color: #D84848
+  &:active
+    color: #B33B3B
+  &:hover
+    color: black
   
 h1
   font-size: 48px
@@ -11,3 +23,48 @@ h2
   font-size: 36px
   color: #aaa
   font-weight: normal
+  
+h3
+  font-size: 24px
+  
+p 
+  margin-bottom: 16px
+  line-height: 1.8
+  
+p + p:last-child, p:only-child
+  margin-bottom: 0
+  
+code
+  background: #eee
+  font-weight: bold
+  font-family: 'Menlo', 'Andale Mono', 'Monaco', monospace
+
+ul, ol
+  margin: 16px 0
+  li
+    margin: 4px 0
+  
+em
+  font-style: oblique
+
+#main
+  margin: 64px auto
+  
+#content
+  margin:
+    top: 64px
+    bottom: 64px
+  .row
+    margin-bottom: 64px
+    border-top: #eee 1px solid
+    padding-top: 8px
+    
+#links
+  font-size: 18px
+  padding: 8px
+  background: #eee
+  display: inline-block
+  font-weight: bold
+  
+.clear
+  clear: both
