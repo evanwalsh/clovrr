@@ -29,7 +29,7 @@ Anyway, here's the _Heroku Way_.
 4. Modify config/mongoid.yml if necessary (Clovrr will automatically work with Heroku and MongoHQ)
 5. _(OPTIONAL)_ Modify db/seeds.rb
 6. `git push heroku master`
-7. `rake app:install`
+7. `heroku rake app:install`
 
 **HEY BRO, YOU'RE DONE. WORD UP.**
 
