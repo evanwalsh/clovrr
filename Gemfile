@@ -31,7 +31,6 @@ group :development, :test do
   gem 'capybara', '~> 0.4.1.2'
   gem 'akephalos', '~> 0.2.5'
   gem 'database_cleaner', '~> 0.6.6'
-  gem 'barista', '~> 1.0.0'
   
   # Mongoid stuff
   gem 'mongoid-rspec', '~> 1.4.1'
