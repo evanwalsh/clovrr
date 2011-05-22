@@ -31,4 +31,6 @@ em { font-style: oblique; }
 
 #links { font-size: 18px; padding: 8px; background: #eeeeee; display: inline-block; font-weight: bold; }
 
+.details iframe { width: 100%; }
+
 .clear { clear: both; }
