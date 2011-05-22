@@ -15,6 +15,7 @@ p { margin-bottom: 16px; line-height: 1.8; }
 p + p:last-child, p:only-child { margin-bottom: 0; }
 ul { list-style: none; }
 blockquote { margin: 16px 0; border-left: #aaa 2px solid; padding-left: 16px; }
+em { font-style: oblique; }
 footer { margin-bottom: 64px; color: #888888; }
 
 #main { margin-top: 64px; margin-bottom: 64px; }
