@@ -15,7 +15,7 @@ class UserTest < ActiveSupport::TestCase
   # it { should have_many(:posts) }
   
   setup do
-    @user = Fabricate.build :user
+    @user = Fabricate :user
   end
   
   def test_password_setter
