@@ -28,5 +28,11 @@ end
 group :development, :test do
   gem 'minitest', '~> 2.1.0'
   gem 'mini_specunit', '~> 0.1.1'
+  gem 'guard', '~> 0.3.4'
+  gem 'guard-test', '~> 0.2.0'
+  
+  # Supplemental
+  gem 'rb-fsevent', '~> 0.4.0'
+  gem 'growl', '~> 1.0.3'
   gem 'database_cleaner', '~> 0.6.6'
 end

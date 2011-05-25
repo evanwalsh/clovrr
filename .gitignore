@@ -10,3 +10,4 @@ gems/*
 !gems/bundler
 coverage
 capybara*.html
+Gemfile.lock
