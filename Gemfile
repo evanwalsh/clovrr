@@ -30,6 +30,8 @@ group :development, :test do
   gem 'mini_specunit', '~> 0.1.1'
   gem 'guard', '~> 0.3.4'
   gem 'guard-test', '~> 0.2.0'
+  gem 'guard-minitest', '~> 0.3.0'
+  gem 'fabrication', '~> 0.9.5'
   
   # Supplemental
   gem 'rb-fsevent', '~> 0.4.0'
