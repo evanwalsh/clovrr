@@ -18,6 +18,11 @@ class UserTest < ActiveSupport::TestCase
     @user = Fabricate :user
   end
   
+  teardown do
+    @user = nil
+    DatabaseCleaner.clean
+  end
+  
   def test_password_setter
     @user.password = "warneverchanges"
     assert_equal @user.password, "warneverchanges"
