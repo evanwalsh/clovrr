@@ -39,19 +39,19 @@ class Post
     end
   end
   
+  def parse_body
+    if self.new_record? && body.present? || self.body_changed?
+      parse
+    end
+  end
+  
+  def parse
+    self.parsed_body = Redcarpet.new(self.body).to_html
+  end
+  
   private
     def generate_url
       self.url = title[0, 32].parameterize
-    end
-    
-    def parse_body
-      if self.new_record? && body.present? || self.body_changed?
-        parse
-      end
-    end
-    
-    def parse
-      self.parsed_body = Redcarpet.new(self.body).to_html
     end
   
 end

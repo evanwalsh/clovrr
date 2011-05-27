@@ -1,7 +1,9 @@
-/* DO NOT MODIFY. This file was compiled Sat, 21 May 2011 02:03:22 GMT from
- * /Users/evan/rails/clovrr/app/scripts/admin.coffee
- */
-
 (function() {
-  $(function() {});
+  $(function(){
+    $("form.post #preview").bind('click', function(){
+      // $.post('/admin/posts/preview', $("form.post").serialize())
+      $("form.post").attr('action', '/admin/posts/preview')
+      $("form.post").submit()
+    })
+  });
 }).call(this);

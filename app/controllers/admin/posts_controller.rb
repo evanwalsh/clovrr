@@ -41,5 +41,11 @@ class Admin::PostsController < AdminController
       render :edit
     end
   end
+  
+  def preview
+    @post = Post.new params[:post]
+    @post.parse_body
+    render 'posts/show'
+  end
 
 end
