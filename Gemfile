@@ -1,6 +1,6 @@
 source :rubygems
 
-gem 'rails', '~> 3.0.7'
+gem 'rails', '~> 3.0.9'
 
 # Database
 gem 'mongoid', '~> 2.0.1'
@@ -40,4 +40,5 @@ group :development, :test do
   gem 'watchr', '~> 0.7'
   gem 'fabrication', '~> 0.9.5'
   gem 'launchy', '~> 0.4.0'
+  gem "simplecov", "~> 0.4.2"
 end
