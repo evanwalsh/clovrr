@@ -7,9 +7,9 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 preferences = {
-  site_name: 'My blog.',
-  site_tagline:	'This is it.',
-  author_name: 'Clovrr User',
+  site_name: 'My Clovrr blog',
+  site_tagline:	'This is my brand new blog',
+  author_name: 'John Doe',
   theme: 'default'
 }
 
